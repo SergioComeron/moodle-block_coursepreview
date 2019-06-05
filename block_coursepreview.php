@@ -61,7 +61,7 @@ class block_coursepreview extends block_list {
         }
 
         $this->content = new stdClass();
-        $context = context_course::instance($this->config->course);
+        $context = context_course::instance($this->config->config_course);
 
         if ((strpos($this->page->pagetype, 'my-index') === 0) && is_enrolled($context, $USER->id, '', true) == 1) {
           $this->content->items[] = $this->config->text['text'];
